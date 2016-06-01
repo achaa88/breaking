@@ -11,11 +11,6 @@ import android.widget.ProgressBar;
 
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
-import com.facebook.login.LoginManager;
-import com.facebook.login.LoginResult;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -23,13 +18,11 @@ import com.google.android.gms.auth.GoogleAuthException;
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 import br.com.thiengo.thiengocalopsitafbexample.domain.User;
 import br.com.thiengo.thiengocalopsitafbexample.domain.util.LibraryClass;
@@ -42,7 +35,7 @@ public class LoginActivity extends CommonActivity implements GoogleApiClient.OnC
     private Firebase firebase;
     private User user;
     private CallbackManager callbackManager;
-    private GoogleApiClient mGoogleApiClient;
+    //private GoogleApiClient mGoogleApiClient;
 
 
     @Override
@@ -138,7 +131,7 @@ public class LoginActivity extends CommonActivity implements GoogleApiClient.OnC
                         user.saveIdSP( LoginActivity.this, authData.getUid() );
                         user.setId( authData.getUid() );
                         user.setName( authData.getProviderData().get("displayName").toString() );
-                        //user.setEmail( authData.getProviderData().get("email").toString() );
+                        user.setEmail( authData.getProviderData().get("email").toString() );
                         user.saveDB();
 
                         callMainActivity();
@@ -217,19 +210,19 @@ public class LoginActivity extends CommonActivity implements GoogleApiClient.OnC
         verifyLogin();
     }
 
-    public void sendLoginFacebookData( View view ){
+    /*public void sendLoginFacebookData( View view ){
         LoginManager
             .getInstance()
             .logInWithReadPermissions(
                 this,
                 Arrays.asList("public_profile", "user_friends", "email")
             );
-    }
+    }*/
 
-    public void sendLoginGoogleData( View view ){
+    /*public void sendLoginGoogleData( View view ){
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN_GOOGLE);
-    }
+    }*/
 
 
 

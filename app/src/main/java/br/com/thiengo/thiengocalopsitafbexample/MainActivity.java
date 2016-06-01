@@ -9,12 +9,9 @@ import android.view.MenuItem;
 import com.facebook.login.LoginManager;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 
-import br.com.thiengo.thiengocalopsitafbexample.adapter.UserRecyclerAdapter;
 import br.com.thiengo.thiengocalopsitafbexample.domain.User;
 import br.com.thiengo.thiengocalopsitafbexample.domain.util.LibraryClass;
 
@@ -22,16 +19,16 @@ import br.com.thiengo.thiengocalopsitafbexample.domain.util.LibraryClass;
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     private Firebase firebase;
-    private UserRecyclerAdapter adapter;
+    //private UserRecyclerAdapter adapter;
     private Firebase.AuthStateListener authStateListener;
-    private GoogleApiClient mGoogleApiClient;
+    //private GoogleApiClient mGoogleApiClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        /* PARA GOOGLE LOGOUT */
+        /*
+        /* PARA GOOGLE LOGOUT
             GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                     .requestIdToken("")
                     .requestEmail()
@@ -40,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     .enableAutoManage(this, this)
                     .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                     .build();
-
+        */
         authStateListener = new Firebase.AuthStateListener() {
             @Override
             public void onAuthStateChanged(AuthData authData) {
