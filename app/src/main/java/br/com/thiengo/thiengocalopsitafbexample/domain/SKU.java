@@ -16,6 +16,7 @@ public class SKU {
     private Double precoMaximo;
     private Double precoMinimo;
     private Double precoSugerido;
+    private Double precoAtual;
 
     // Construtores
 
@@ -89,7 +90,10 @@ public class SKU {
         return precoSugerido;
     }
 
-    public void setPrecoSugerido(Double precoSugerido) {
-        this.precoSugerido = precoSugerido;
-    }
+    public void setPrecoSugerido(Double precoSugerido) { this.precoSugerido = precoSugerido; }
+
+    public Double getPrecoAtual() { return precoAtual; }
+    public String getPrecoAtualString(){ return precoAtual.toString(); }
+
+    public void setPrecoAtual(Double precoAtual) { this.precoAtual = precoAtual; }
 }

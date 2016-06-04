@@ -48,6 +48,7 @@ public class PDV {
     public void setCEP(String CEP) {
         this.CEP = CEP;
     }
+    public  String getFullEndereco() { return (endereco+" "+bairro+" "+cidade+" "+UF);}
 
     public String getTelefone() {
         return telefone;
@@ -131,8 +132,3 @@ public class PDV {
 
 
 }
-//fazer check in
-
-//fazer check out
-
-//localizar no mapa
