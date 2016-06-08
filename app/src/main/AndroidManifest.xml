@@ -59,7 +59,8 @@
         <activity android:name=".GondulaActivity" />
         <activity android:name=".PesquisaPrecosActivity" />
         <activity android:name=".PesquisaPrecosConcorrenteActivity" />
-        <activity android:name=".PerguntasDiversasActivity"></activity>
+        <activity android:name=".PerguntasDiversasActivity" />
+        <activity android:name=".CheckInPDVActivity"></activity>
     </application>
 
 </manifest>

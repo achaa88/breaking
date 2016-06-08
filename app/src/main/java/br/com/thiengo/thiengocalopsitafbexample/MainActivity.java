@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.facebook.login.LoginManager;
 import com.firebase.client.AuthData;
@@ -53,6 +54,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         firebase.addAuthStateListener( authStateListener );
     }
 
+    public void onClickPDV(View view){
+        Intent intent = new Intent(this,PDVActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onResume() {
